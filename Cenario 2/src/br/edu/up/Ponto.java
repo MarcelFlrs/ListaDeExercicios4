@@ -4,7 +4,6 @@ public class Ponto {
 
     private double x;
     private double y;
-    private double distancia;
     private double distanciaPontos;
 
     public Ponto() {
@@ -31,11 +30,6 @@ public class Ponto {
 
     public void setY(double y) {
         this.y = y;
-    }
-
-    public double calcularDistancia(double x, double y) {
-
-        return distancia;
     }
 
     public double calcularDistancia(Ponto outroPonto) {
