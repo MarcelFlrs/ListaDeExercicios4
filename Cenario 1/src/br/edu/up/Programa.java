@@ -16,8 +16,20 @@ public class Programa {
         System.out.println("Título: " + livro1.getTitulo());
         System.out.println("Autores: " + livro1.getAutores());
         System.out.println("ISBN: " + livro1.getIsbn());
-        System.out.println("Ano: " + livro1.getAno()+ "\n");
-       
+        System.out.println("Ano: " + livro1.getAno() + "\n");
+
+        Livro livro2 = new Livro("Java, Como programar");
+        livro2.setCodigo("9865PLO");
+        livro2.setAutores("Harvey Deitel");
+        livro2.setIsbn("0130341517");
+        livro2.setAno(2015);
+
+        System.out.println("Livro 02: ");
+        System.out.println("Código: " + livro2.getCodigo());
+        System.out.println("Título: " + livro2.getTitulo());
+        System.out.println("Autores: " + livro2.getAutores());
+        System.out.println("ISBN: " + livro2.getIsbn());
+        System.out.println("Ano: " + livro2.getAno() + "\n");
 
     }
 }
