@@ -38,7 +38,8 @@ public class Ponto {
         return distancia;
     }
 
-    public double calcularDistancia() {
+    public double calcularDistancia(Ponto outroPonto) {
+        distanciaPontos = Math.sqrt(Math.pow((this.x - outroPonto.x), 2) + Math.pow((this.y - outroPonto.y), 2));
 
         return distanciaPontos;
     }
