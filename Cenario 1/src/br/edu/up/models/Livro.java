@@ -8,6 +8,11 @@ public class Livro {
     private String isbn;
     private int ano;
 
+    //Construtor
+    public Livro(String titulo){
+        this.titulo = titulo;
+    }
+
     // Getters e Setters
 
     public String getTitulo() {
