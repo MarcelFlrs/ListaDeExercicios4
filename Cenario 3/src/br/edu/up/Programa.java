@@ -8,13 +8,15 @@ public class Programa {
         System.out.println();
 
         Dia dia = new Dia(1);
-        dia.adicionarCompromisso("a", "b", "c", 3);
-        dia.adicionarCompromisso("d", "e", "f", 4);
+        Mes mes = new Mes("Junho", 31);
+        dia.adicionarCompromisso("diaA", "diaA", "diaA", 4);
         dia.consultarCompromisso(3);
         dia.consultarCompromisso(4);
+        
+        mes.adicionarCompromisso("mesA", "mesA", "mesA", 4, 3);
+        mes.adicionarCompromisso("mesB", "mesB", "mesB", 4, 3);
 
         dia.excluirCompromisso(4);
-
         dia.consultarCompromisso(4);
     }
 
