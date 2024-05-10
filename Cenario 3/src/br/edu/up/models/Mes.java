@@ -9,6 +9,9 @@ public class Mes {
         this.nome = nome;
         this.qtdeDias = qtdeDias;
         this.dias = new Dia[qtdeDias];
+        for (int i = 0; i < qtdeDias; i++) {
+            dias[i] = new Dia(i + 1);
+        }
     }
 
     public String adicionarDia(int diaMes) {
@@ -18,25 +21,30 @@ public class Mes {
         return "";
     }
 
-    public String adicionarCompromisso(String pessoa, String local, String assunto, int hora, int diaMes){
+    public String adicionarCompromisso(String pessoa, String local, String assunto, int hora, int diaMes) {
         Dia dia = dias[diaMes - 1];
-        int horaDisponivel = verificarHoraDisponivel(dia.compromissos);
-        if (hora != -1) {
-            dia.adicionarCompromisso(pessoa, local, assunto, (horaDisponivel + 1) );
-        }else{
-            System.out.println("Já existe um compromisso para a hora " + hora + " no dia " + diaMes);
+
+        if (dia != null) {
+            int horaDisponivel = verificarHoraDisponivel(dia.compromissos);
+            if (horaDisponivel != -1) {
+                dia.adicionarCompromisso(pessoa, local, assunto, horaDisponivel + 1);
+                System.out.println("Criado compromisso para " + hora + "hrs e dia " + diaMes);
+            } else {
+                System.out.println("Já existe um compromisso para a hora " + hora + " no dia " + diaMes);
+            }
+        } else {
+            System.out.println("Não existe o dia " + diaMes);
         }
         return "";
     }
 
-    private int verificarHoraDisponivel(Compromisso[] compromissos){
+    private int verificarHoraDisponivel(Compromisso[] compromissos) {
         for (int i = 0; i < compromissos.length; i++) {
-            if (compromissos[i] == null) {
+            if (compromissos[i] != null) {
                 return i;
             }
         }
         return -1;
-        
     }
 
 }
