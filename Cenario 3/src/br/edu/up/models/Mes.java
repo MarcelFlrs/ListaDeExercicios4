@@ -30,7 +30,7 @@ public class Mes {
                 dia.adicionarCompromisso(pessoa, local, assunto, horaDisponivel + 1);
                 System.out.println("Criado compromisso para " + hora + "hrs e dia " + diaMes);
             } else {
-                System.out.println("Já existe um compromisso para a hora " + hora + " no dia " + diaMes);
+                System.out.println("Já existe um compromisso para às " + hora + " horas do dia " + diaMes);
             }
         } else {
             System.out.println("Não existe o dia " + diaMes);
