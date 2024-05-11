@@ -1,30 +1,28 @@
 package br.edu.up.models;
 
+import java.util.Arrays;
+
 public class Ano {
 
     private int ano;
     private boolean bissexto;
     private Mes[] meses ;
    
-   
-    public int getAno() {
-        return ano;
-    }
-    public void setAno(int ano) {
+    public Ano(int ano, boolean bissexto) {
         this.ano = ano;
-    }
-    public boolean isBissexto() {
-        return bissexto;
-    }
-    public void setBissexto(boolean bissexto) {
         this.bissexto = bissexto;
     }
-    public Mes[] getMeses() {
-        return meses;
-    }
-    public void setMeses(Mes[] meses) {
-        this.meses = meses;
+
+    public void adicionarMes(Mes[] meses){
+
     }
 
+    public void excluirCompromisso(String nomeMes, int diaMes, int hora){
+
+    }
+
+    public void listarCompromissos(String nomeMes){
+
+    }
 
 }
