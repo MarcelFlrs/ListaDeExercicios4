@@ -1,13 +1,11 @@
 package br.edu.up.models;
 
-import java.util.Arrays;
-
 public class Ano {
 
     private static final Mes Mes = null;
     private int ano;
     private boolean bissexto;
-    private Mes[] meses ;
+    private Mes[] meses;
    
     public Ano(int ano, boolean bissexto) {
         this.ano = ano;
@@ -23,26 +21,6 @@ public class Ano {
             }
         }
         System.out.println("Não foi possivel adicionar o mês. O ano já está completo.");
-    }
-
-    public void excluirCompromisso(String nomeMes, int diaMes, int hora){
-        for(Mes Mes : meses){
-            if (Mes.getNome().equalsIgnoreCase(nomeMes)) {
-                Mes.excluirCompromisso(diaMes, hora);
-                return;
-            }
-        }
-        System.out.println("Mês não encontrado!");
-    }
-
-    public void listarCompromissos(String nomeMes){
-        for(Mes Mes : meses){
-            if (Mes.getNome().equalsIgnoreCase(nomeMes)) {
-                Mes.listarCompromissos();
-                return;
-            }
-        }
-        System.out.println("Não há compromissos nesse mês!");       
     }
 
 }

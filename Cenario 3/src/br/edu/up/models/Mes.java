@@ -47,19 +47,4 @@ public class Mes {
         return -1;
     }
 
-    public String getNome() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
-    }
-
-    public void excluirCompromisso(int diaMes, int hora) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'excluirCompromisso'");
-    }
-
-    public void listarCompromissos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listarCompromissos'");
-    }
-
 }
