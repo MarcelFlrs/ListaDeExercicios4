@@ -22,14 +22,15 @@ public class Mes {
     }
 
     public String adicionarCompromisso(String pessoa, String local, String assunto, int hora, int diaMes) {
-        Dia dia = dias[diaMes - 1];
 
-        if (dia != null) {
-            int horaDisponivel = verificarHoraDisponivel(dia.compromissos);
-            if (horaDisponivel != -1) {
-                dia.adicionarCompromisso(pessoa, local, assunto, horaDisponivel + 1);
+        dias[diaMes-1] = new Dia(diaMes);
+
+        if (dias[diaMes] != null) {
+            if (dias[diaMes - 1].consultarCompromisso(hora).equals("1")) {
+                dias[diaMes - 1].adicionarCompromisso(pessoa, local, assunto, (hora + 1));
                 System.out.println("Criado compromisso para " + hora + "hrs e dia " + diaMes);
-            } else {
+
+            } else{
                 System.out.println("Já existe um compromisso para às " + hora + " horas do dia " + diaMes);
             }
         } else {
@@ -38,28 +39,6 @@ public class Mes {
         return "";
     }
 
-    private int verificarHoraDisponivel(Compromisso[] compromissos) {
-        for (int i = 0; i < compromissos.length; i++) {
-            if (compromissos[i] != null) {
-                return i;
-            }
-        }
-        return -1;
-    }
 
-    public String getNome() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
-    }
-
-    public void excluirCompromisso(int diaMes, int hora) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'excluirCompromisso'");
-    }
-
-    public void listarCompromissos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listarCompromissos'");
-    }
 
 }

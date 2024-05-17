@@ -1,13 +1,11 @@
 package br.edu.up.models;
 
-import java.util.Arrays;
-
 public class Ano {
 
     private static final Mes Mes = null;
     private int ano;
     private boolean bissexto;
-    private Mes[] meses ;
+    private Mes[] meses;
    
     public Ano(int ano, boolean bissexto) {
         this.ano = ano;
