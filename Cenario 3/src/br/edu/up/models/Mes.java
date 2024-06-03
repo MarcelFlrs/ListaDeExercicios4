@@ -22,22 +22,22 @@ public class Mes {
     }
 
     public String adicionarCompromisso(String pessoa, String local, String assunto, int hora, int diaMes) {
-
-        dias[diaMes-1] = new Dia(diaMes);
-
-        if (dias[diaMes] != null) {
-            if (dias[diaMes - 1].consultarCompromisso(hora).equals("1")) {
-                dias[diaMes - 1].adicionarCompromisso(pessoa, local, assunto, (hora + 1));
-                System.out.println("Criado compromisso para " + hora + "hrs e dia " + diaMes);
-
-            } else{
-                System.out.println("Já existe um compromisso para às " + hora + " horas do dia " + diaMes);
+        if (diaMes >= 1 && diaMes <= qtdeDias) {
+            if (dias[diaMes - 1] == null) {
+                dias[diaMes - 1] = new Dia(diaMes);
+            }
+    
+            if (dias[diaMes - 1].consultarCompromisso(hora).equals("Não existe compromisso para às " + hora + "hrs")) {
+                dias[diaMes - 1].adicionarCompromisso(pessoa, local, assunto, hora);
+                return "Criado compromisso para " + hora + "hrs e dia " + diaMes;
+            } else {
+                return "Já existe um compromisso para às " + hora + " horas do dia " + diaMes;
             }
         } else {
-            System.out.println("Não existe o dia " + diaMes);
+            return "Não existe o dia " + diaMes;
         }
-        return "";
     }
+    
 
 
 

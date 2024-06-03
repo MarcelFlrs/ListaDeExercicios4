@@ -25,11 +25,9 @@ public class Dia {
 
     public String consultarCompromisso(int hora) {
         if (compromissos[hora - 1] != null) {
-            System.out.println("Você tem um compromisso agendado para as " + compromissos[hora - 1].getHora() + " Hrs");
-            return "Compromisso existente";
+            return "Você tem um compromisso agendado para as " + compromissos[hora - 1].getHora() + " Hrs";
         } else {
-            System.out.println("Não existe compromisso para às " + hora + "hrs");
-            return "1";
+            return "Não existe compromisso para às " + hora + "hrs";
         }
 
     }
@@ -38,10 +36,8 @@ public class Dia {
         if (hora >= 1 && hora <= 24) {
             if (compromissos[hora - 1] != null) {
                 compromissos[hora - 1] = null;
-                System.out.println("Compromisso excluido com sucesso");
-                return "Compromisso excluído com sucesso";
+                return "Compromisso excluido com sucesso";
             } else {
-                System.out.println("Compromisso não existente");
                 return "Compromisso não existente";
             }
         } else {
