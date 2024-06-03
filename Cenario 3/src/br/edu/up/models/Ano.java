@@ -62,8 +62,21 @@ public class Ano {
         return "Mês não encontrado";
     }
     
-    public String listarCompromissos(String nomeMes){
-        
+    public String listarCompromissos(String nomeMes) {
+        Mes mes = getMes(nomeMes);
+        if (mes == null) {
+            return "Mês não encontrado";
+        }
+        for (Dia dia : mes.getDias()) {
+            if (dia != null) {
+                for (int hora = 1; hora < 24; hora++) {
+                    Compromisso compromisso = dia.getCompromisso(hora);
+                    if (compromisso != null) {
+                        return "Dia " + dia.getDiaMes() + " às "+ hora +" horas: " + compromisso.getAssunto() + " com " + compromisso.getPessoa() + " no local " + compromisso.getLocal() + "\n";
+                    }
+                }
+            }
+        }
         return "";
     }
     

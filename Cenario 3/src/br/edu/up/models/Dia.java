@@ -45,4 +45,15 @@ public class Dia {
         }
     }
 
+    public Compromisso getCompromisso(int hora) {
+        if (hora <= 1 || hora >= 24) {
+            return null;
+        }
+        return compromissos[hora];
+    }
+
+    public int getDiaMes() {
+        return diaMes;
+    }
+
 }

@@ -27,6 +27,8 @@ public class Programa {
         
         System.out.println(mes.adicionarCompromisso("mesA", "mesA", "mesA", 8, 6)); 
 
+        System.out.println(ano.listarCompromissos("Junho"));
+
         System.out.println();
         System.out.println();
 
