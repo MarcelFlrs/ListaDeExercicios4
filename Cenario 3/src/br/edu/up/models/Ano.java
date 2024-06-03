@@ -6,43 +6,33 @@ public class Ano {
     private boolean bissexto;
     private Mes[] meses;
    
-    public Ano(int ano, boolean bissexto) {
-        this.ano = ano;
-        this.bissexto = bissexto;
-        this.meses = new Mes[12];
-        for (int i = 0; i < meses.length; i++) {
-            this.meses[i] = new Mes(obterMes(i), obterQtDias(i, bissexto));
-        }
+    public Ano(int ano) {
+        meses = new Mes[12];
+        meses[0] = new Mes("Janeiro", 31);
+        meses[1] = new Mes("Fevereiro", anoBissexto(ano) ? 29 : 28);
+        meses[2] = new Mes("Março", 31);
+        meses[3] = new Mes("Abril", 30);
+        meses[4] = new Mes("Maio", 31);
+        meses[5] = new Mes("Junho", 30);
+        meses[6] = new Mes("Julho", 31);
+        meses[7] = new Mes("Agosto", 31);
+        meses[8] = new Mes("Setembro", 30);
+        meses[9] = new Mes("Outubro", 31);
+        meses[10] = new Mes("Novembro", 30);
+        meses[11] = new Mes("Dezembro", 31);
     }
 
-    private String obterMes(int numeroMes) {
-        switch (numeroMes) {
-            case 1: return "Janeiro";
-            case 2: return "Fevereiro";
-            case 3: return "Março";
-            case 4: return "Abril";
-            case 5: return "Maio";
-            case 6: return "Junho";
-            case 7: return "Julho";
-            case 8: return "Agosto";
-            case 9: return "Setembro";
-            case 10: return "Outubro";
-            case 11: return "Novembro";
-            case 12: return "Dezembro";
-            default: return "";
-        }
+    private boolean anoBissexto(int ano) {
+        return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
     }
-    private int obterQtDias(int numeroMes, boolean bissexto) {
-        switch (numeroMes) {
-            case 0: case 2: case 4: case 6: case 7: case 9: case 11:
-                return 31;
-            case 3: case 5: case 8: case 10:
-                return 30;
-            case 1:
-                return bissexto ? 29 : 28;
-            default:
-                return 0;
+
+    public Mes getMes(String nomeMes) {
+        for (Mes mes : meses) {
+            if (mes.getNome().equalsIgnoreCase(nomeMes)) {
+                return mes;
+            }
         }
+        return null;
     }
 
     public void adicionarMes(Mes mes){
@@ -52,14 +42,35 @@ public class Ano {
                 return;
             }
         }
-        
     }
 
+    public String excluirCompromisso(String nomeMes, int hora, int diaMes){
+         for (Mes mes : meses) {
+            if (mes.getNome().equalsIgnoreCase(nomeMes)) {
+                if (diaMes >= 1 && diaMes <= mes.getQtdeDias()) {
+                    Dia dia = mes.getDias()[diaMes - 1];
+                    if (dia != null) {
+                        return dia.excluirCompromisso(hora);
+                    } else {
+                        return "Dia não existente";
+                    }
+                } else {
+                    return "Dia fora do alcance";
+                }
+            }
+        }
+        return "Mês não encontrado";
+    }
+    
+    public String listarCompromissos(String nomeMes){
+        
+        return "";
+    }
+    
+    public String listarCompromissos(){
 
-
-
- 
-
+        return "";
+    }
 
 
 

@@ -3,7 +3,7 @@ package br.edu.up.models;
 public class Mes {
     private String nome;
     private int qtdeDias;
-    private Dia[] dias;
+    Dia[] dias;
 
     public Mes(String nome, int qtdeDias) {
         this.nome = nome;
@@ -13,6 +13,19 @@ public class Mes {
             dias[i] = new Dia(i + 1);
         }
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getQtdeDias() {
+        return qtdeDias;
+    }
+
+    public Dia[] getDias() {
+        return dias;
+    }
+
 
     public String adicionarDia(int diaMes) {
         if (diaMes >= 1 && diaMes <= qtdeDias) {
@@ -37,8 +50,6 @@ public class Mes {
             return "Não existe o dia " + diaMes;
         }
     }
-    
-
 
 
 }
