@@ -23,7 +23,8 @@ public class Ano {
     }
 
     private boolean anoBissexto(int ano) {
-        return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
+        bissexto = (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
+        return bissexto; 
     }
 
     public Mes getMes(String nomeMes) {
